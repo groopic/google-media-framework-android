@@ -1,2 +1,0 @@
-configurations.create("default")
-artifacts.add("default", file('ingrain-io-0.0.2.aar'))
