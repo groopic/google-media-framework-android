@@ -16,6 +16,7 @@
 
 package com.google.android.libraries.mediaframework.layeredvideo;
 
+import android.view.View;
 import android.widget.FrameLayout;
 
 /**
@@ -36,7 +37,7 @@ public interface Layer {
    * @param layerManager The {@link LayerManager} which will contain this layer.
    * @return The view to be layered onto the video player by the {@link LayerManager}
    */
-  public FrameLayout createView(LayerManager layerManager);
+  public View createView(LayerManager layerManager);
 
   /**
    * Called when a Layer's view has been displayed on the screen. Any additional setup which

@@ -81,7 +81,7 @@ public class VideoSurfaceLayer implements Layer {
 
     @Override
     public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i2, int i3) {
-
+        surfaceListener.onSurfaceSizeChanged(i2, i3);
     }
 
     @Override
@@ -165,4 +165,16 @@ public class VideoSurfaceLayer implements Layer {
   public void release() {
     layerManager.getExoplayerWrapper().removeListener(playbackListener);
   }
+
+
+    SurfaceSizeChangeListener surfaceListener;
+    public void setSurfaceChangeListener(SurfaceSizeChangeListener listener)
+    {
+        surfaceListener = listener;
+    }
+    //WinGoku
+    public interface SurfaceSizeChangeListener
+    {
+        public void onSurfaceSizeChanged(int width, int height);
+    }
 }

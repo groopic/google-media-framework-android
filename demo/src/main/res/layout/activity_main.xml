@@ -19,19 +19,23 @@ limitations under the License.
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.google.googlemediaframeworkdemo.demo.MainActivity">
+    tools:context="com.google.googlemediaframeworkdemo.demo.MainActivity"
+    android:id="@+id/wingoku">
 
     <FrameLayout
+        android:layout_weight="1"
         android:id="@+id/video_frame"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@android:color/background_dark"/>
-
+        android:background="@android:color/background_dark"
+        android:clickable="false"
+    >
+    </FrameLayout>
     <ListView
         android:id="@+id/video_list_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        />
 
 </LinearLayout>

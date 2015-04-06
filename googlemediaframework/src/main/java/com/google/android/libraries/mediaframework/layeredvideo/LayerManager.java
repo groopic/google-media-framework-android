@@ -18,6 +18,9 @@ package com.google.android.libraries.mediaframework.layeredvideo;
 
 import android.app.Activity;
 import android.graphics.Color;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.FrameLayout;
 
 import com.google.android.libraries.mediaframework.exoplayerextensions.ExoplayerWrapper;
@@ -73,6 +76,7 @@ public class LayerManager {
                       List<Layer> layers) {
     this.activity = activity;
     this.container = container;
+
     container.setBackgroundColor(Color.BLACK);
 
     ExoplayerWrapper.RendererBuilder rendererBuilder =
@@ -87,6 +91,7 @@ public class LayerManager {
     container.removeAllViews();
     for (Layer layer : layers) {
       container.addView(layer.createView(this));
+        Log.e("wingoku", "addded view");
       layer.onLayerDisplayed(this);
     }
   }

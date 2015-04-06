@@ -34,7 +34,7 @@ import java.io.IOException;
 import java.util.UUID;
 
 /**
- * A {@link MediaDrmCallback} for Widevine test content.
+ * A {@link MediaDrmCallback} for Widevine ingrain_ad_view content.
  */
 @TargetApi(18)
 public class WidevineTestMediaDrmCallback implements MediaDrmCallback {
