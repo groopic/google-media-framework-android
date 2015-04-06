@@ -14,4 +14,4 @@
  limitations under the License.
  */
 
-include ':demo', ':googlemediaframework', ':ingrain-io-0.0.2'
+include ':demo', ':googlemediaframework'

@@ -234,8 +234,11 @@ public class MainActivity extends Activity implements PlaybackControlLayer.Fulls
                                 "bf5bb2419360daf1"),
                         null),
                 new VideoListItem("Skippable preroll (DASH)",
-                        new Video("https://s3-us-west-2.amazonaws.com/ingrain/capitaltalk.geo/CapitalTalk20150105.mp4",
-                                Video.VideoType.MP4,
+                        new Video("http://www.youtube.com/api/manifest/dash/id/bf5bb2419360daf1/source/youtub" +
+                                "e?as=fmp4_audio_clear,fmp4_sd_hd_clear&sparams=ip,ipbits,expire,as&ip=0.0.0.0&ip" +
+                                "bits=0&expire=19000000000&signature=255F6B3C07C753C88708C07EA31B7A1A10703C8D.2D6" +
+                                "A28B21F921D0B245CDCF36F7EB54A2B5ABFC2&key=ik0",
+                                Video.VideoType.DASH,
                                 "bf5bb2419360daf1"),
                         "http://pubads.g.doubleclick.net/gampad/ads?sz=400x300&iu=%2F6062%2Fgmf_demo&ciu_" +
                                 "szs&impl=s&gdfp_req=1&env=vp&output=xml_vast3&unviewed_position_start=1&url=[ref" +
@@ -265,6 +268,13 @@ public class MainActivity extends Activity implements PlaybackControlLayer.Fulls
                         new Video("https://s3-us-west-2.amazonaws.com/ingrain/capitaltalk.geo/CapitalTalk20150105.mp4",
                                 Video.VideoType.MP4),
                         null),
+
+                new VideoListItem("With ads (mp4)",
+                        new Video(Environment.getExternalStorageDirectory().getAbsolutePath()+"/Ingrain/movie1.mp4",
+                                Video.VideoType.MP4),
+                        "http://pubads.g.doubleclick.net/gampad/ads?sz=400x300&iu=%2F6062%2Fgmf_demo&ciu_" +
+                                "szs&impl=s&gdfp_req=1&env=vp&output=xml_vast3&unviewed_position_start=1&url=[ref" +
+                                "errer_url]&correlator=[timestamp]&cust_params=gmf_format%3Dskip"),
 
                 new VideoListItem("No ads - BBB (HLS)",
                         new Video("http://googleimadev-vh.akamaihd.net/i/big_buck_bunny/bbb-,480p,720p,1080p" +

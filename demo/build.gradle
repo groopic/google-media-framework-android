@@ -42,5 +42,4 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.google.android.gms:play-services:4.3.23'
     compile project(':googlemediaframework')
-    compile 'com.github.nkzawa:socket.io-client:0.4.2'
 }

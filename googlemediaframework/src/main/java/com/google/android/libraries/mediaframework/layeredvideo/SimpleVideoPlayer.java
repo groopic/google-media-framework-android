@@ -22,6 +22,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.google.android.exoplayer.ExoPlayer;
 import com.google.android.libraries.mediaframework.exoplayerextensions.ExoplayerWrapper;
@@ -120,6 +121,7 @@ public class SimpleVideoPlayer implements IngrainAdView.IngrainViewControls, Pla
             playbackControlLayer.setIngrainEventListener(this);
 
             layers.add(ingrainLayerView);
+
         }
 
         layers.add(playbackControlLayer);
@@ -139,15 +141,17 @@ public class SimpleVideoPlayer implements IngrainAdView.IngrainViewControls, Pla
             layerManager.getExoplayerWrapper().seekTo(startPostitionMs);
         }
 
-        if(ingrainLayerView != null && ingrainAdView != null) {
+        //wingoku
+        if(ingrainLayerView != null) {
             ingrainAdView = ingrainLayerView.getIngrainAdView();
-
-            ingrainAdView.setIngrainViewControlListener(this);
-            ingrainAdView.setUp(videoID, apiKey);
-            ingrainAdView.isReadyStateAvailable(true);
-            String objectTag = "http://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/7708063/ingrain_object&ciu_szs&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=www.groopic.com&description_url=www.groopic.com";
-            ingrainAdView.setObjectsTag(objectTag);
-            ingrainAdView.setCustomTargetingParams(new HashMap<String, Object>());
+            if(ingrainAdView != null) {
+                ingrainAdView.setIngrainViewControlListener(this);
+                ingrainAdView.setUp(videoID, apiKey);
+                ingrainAdView.isReadyStateAvailable(true);
+                String objectTag = "http://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/7708063/ingrain_object&ciu_szs&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=www.groopic.com&description_url=www.groopic.com";
+                ingrainAdView.setObjectsTag(objectTag);
+                ingrainAdView.setCustomTargetingParams(new HashMap<String, Object>());
+            }
 
         }
 
@@ -398,11 +402,6 @@ public class SimpleVideoPlayer implements IngrainAdView.IngrainViewControls, Pla
     public void release() {
         videoSurfaceLayer.release();
         layerManager.release();
-    }
-
-    //Wingoku
-    public void setSurfaceSizeChangeListenerx(VideoSurfaceLayer.SurfaceSizeChangeListener l) {
-        videoSurfaceLayer.setSurfaceChangeListener(l);
     }
 
     @Override

@@ -27,6 +27,7 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url "https://raw.github.com/groopic/ingrain-sdk-android/master" }
         mavenCentral()
     }
 }
