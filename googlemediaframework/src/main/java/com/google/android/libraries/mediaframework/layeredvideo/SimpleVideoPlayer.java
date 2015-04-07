@@ -148,9 +148,6 @@ public class SimpleVideoPlayer implements IngrainAdView.IngrainViewControls, Pla
                 ingrainAdView.setIngrainViewControlListener(this);
                 ingrainAdView.setUp(videoID, apiKey);
                 ingrainAdView.isReadyStateAvailable(true);
-                String objectTag = "http://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/7708063/ingrain_object&ciu_szs&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=www.groopic.com&description_url=www.groopic.com";
-                ingrainAdView.setObjectsTag(objectTag);
-                ingrainAdView.setCustomTargetingParams(new HashMap<String, Object>());
             }
 
         }
@@ -170,6 +167,34 @@ public class SimpleVideoPlayer implements IngrainAdView.IngrainViewControls, Pla
                 return true;
             }
         });
+    }
+
+    //wingoku
+    public void setObjectTag(String objectTag)
+    {
+        if(ingrainAdView != null)
+            ingrainAdView.setObjectsTag(objectTag);
+    }
+
+    //wingoku
+    public void setPosterTag(String posterTag)
+    {
+        if(ingrainAdView != null)
+            ingrainAdView.setPostersTag(posterTag);
+    }
+
+    //wingoku
+    public void setTickerTag(String tickerTag)
+    {
+        if(ingrainAdView != null)
+            ingrainAdView.setTickersTag(tickerTag);
+    }
+
+    //wingoku
+    public void setCustomTargetingParams(HashMap<String, Object> customParams)
+    {
+        if(ingrainAdView != null)
+            ingrainAdView.setCustomTargetingParams(customParams);
     }
 
     /**

@@ -35,6 +35,8 @@ import com.google.android.libraries.mediaframework.exoplayerextensions.Video;
 import com.google.android.libraries.mediaframework.layeredvideo.PlaybackControlLayer;
 import com.google.googlemediaframeworkdemo.demo.adplayer.ImaPlayer;
 
+import java.util.HashMap;
+
 import io.ingrain.sdk.IngrainAdView;
 
 /**
@@ -138,8 +140,21 @@ public class MainActivity extends Activity implements PlaybackControlLayer.Fulls
                 videoListItem.video,
                 videoTitle,
                 adTagUrl, "geonews.capitaltalk.20150501", "apiKey");
-
         imaPlayer.setFullscreenCallback(this);
+
+        /**
+         * pass your objects/Posters/Tickers tag in the method provided {@link ImaPlayer#setObjectTag(String tag)}, {@link ImaPlayer#setPosterTag(String tag)}, {@link ImaPlayer#setTickerTag(String tag)} respectively in ImaPlayer
+         */
+        String objectTag = "http://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/7708063/ingrain_object&ciu_szs&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=www.groopic.com&description_url=www.groopic.com";
+        imaPlayer.setObjectTag(objectTag);
+
+        /**
+         * For custom targeting, pass your params as shown below.
+         */
+        HashMap<String, Object> params = new HashMap<String, Object>();
+        params.put("age", 14);
+        imaPlayer.setCustomTargetingParams(params);
+
 
         Resources res = getResources();
 

@@ -731,4 +731,32 @@ public class ImaPlayer implements PlaybackControlLayer.FullscreenCallback{
     private void requestAd() {
         adsLoader.requestAds(buildAdsRequest(adTagUrl.toString()));
     }
+
+    //wingoku
+    public void setObjectTag(String objectTag)
+    {
+        if(contentPlayer != null)
+            contentPlayer.setObjectTag(objectTag);
+    }
+
+    //wingoku
+    public void setPosterTag(String posterTag)
+    {
+        if(contentPlayer != null)
+            contentPlayer.setPosterTag(posterTag);
+    }
+
+    //wingoku
+    public void setTickerTag(String tickerTag)
+    {
+        if(contentPlayer != null)
+            contentPlayer.setTickerTag(tickerTag);
+    }
+
+    //wingoku
+    public void setCustomTargetingParams(HashMap<String, Object> customParams)
+    {
+        if(contentPlayer != null)
+            contentPlayer.setCustomTargetingParams(customParams);
+    }
 }
