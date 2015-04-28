@@ -146,7 +146,7 @@ public class SimpleVideoPlayer implements IngrainAdView.IngrainViewControls, Pla
             ingrainAdView = ingrainLayerView.getIngrainAdView();
             if(ingrainAdView != null) {
                 ingrainAdView.setIngrainViewControlListener(this);
-                ingrainAdView.setUp(videoID, apiKey);
+                ingrainAdView.setUp(videoID, apiKey, false);
                 ingrainAdView.isReadyStateAvailable(true);
             }
 
